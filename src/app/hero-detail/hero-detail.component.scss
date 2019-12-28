@@ -33,3 +33,14 @@ button {
 
   }
 }
+.implements{
+  text-align: center;
+  border: 3px solid black;
+  &-head{
+    background: cyan;
+    border: #039be5 3px solid;
+  }
+  &-body{
+    border: 3px solid black;
+  }
+}
