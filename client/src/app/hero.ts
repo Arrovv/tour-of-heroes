@@ -14,5 +14,24 @@ export class Hero {
     item_class: string;
     img: string;
   }
-
+  weapon: {
+    lvl: number;
+    item_class:string;
+    img: string;
+  }
+  legs: {
+    lvl: number;
+    item_class:string;
+    img: string;
+  }
+  hands: {
+    lvl: number;
+    item_class: string;
+    img: string;
+  }
+  boots: {
+    lvl: number;
+    item_class: string;
+    img: string;
+  }
 }

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { HttpClient} from '@angular/common/http';
 
 import {Hero} from '../hero'
 import {HeroService} from "../hero.service";
@@ -9,33 +10,14 @@ import {HeroService} from "../hero.service";
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  Hero: {};
 
-  constructor(private heroService: HeroService) {
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
-    this.getHeroes();
+    this.http.get('http://localhost:5000/api/')
+    .subscribe((data:Hero) => this.Hero = data)
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes)
-  }
-
-  add(name: string): void {
-    name = name.trim();
-    if (!name) {
-      return;
-    }
-    this.heroService.addHero({name} as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
-      });
-  }
-
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
-  }
 }

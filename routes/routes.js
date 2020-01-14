@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/heroes/:id', async (req, res) => {
   try {
     const hero = await Hero.findById(req.params.id)
     console.log(hero)
