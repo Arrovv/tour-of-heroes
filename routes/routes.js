@@ -5,8 +5,8 @@ const router = Router()
 // /api
 router.get('/', async (req, res) => {
   try {
-    const heroes = await Hero.find({})
-    console.log(heroes)
+    const heroes = await Hero.find().pretty()
+    
     res.json(heroes)
   } catch (e) {
     res.status(500).json({message: 'Error...!'})

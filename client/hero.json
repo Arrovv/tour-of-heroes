@@ -1,0 +1,75 @@
+{"heroes":[
+  {
+    "id": 1,
+    "name": "Dr Nice",
+    "age": 20,
+    "class": "Mag",
+    "statistics": 10000,
+    "HP": 1500,
+    "MP": 3000,
+    "head": {
+      "lvl": 5,
+      "item_class": "cap",
+      "img": "/assets/img/cap/cap2.jpg"
+    },
+    "body": {
+      "lvl": 2,
+      "item_class": "mag",
+      "img": "/assets/img/armor/armor7.jpg"
+    },
+    "weapon": {
+      "lvl": 3,
+      "item_class": "mag",
+      "img": "/assets/img/staff/staff3.jpg"
+    },
+    "legs": {
+      "lvl": 2,
+      "item_class": "mag",
+      "img": "/assets/img/legs/legs.jpg"
+    },
+    "hands": {
+      "lvl": 4,
+      "item_class": "mag",
+      "img": "/assets/img/glove/glove.jpg"
+    },
+    "boots": {
+      "lvl": 3,
+      "item_class": "mag",
+      "img": "/assets/img/boots/boots4.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Dr Hi",
+    "age": 22,
+    "class": "Warrior",
+    "statistics": 12000,
+    "HP": 1500,
+    "MP": 3000,
+    "head": {
+      "lvl": 2,
+      "item_class": "mag",
+      "img": "/assets/img/armor/armor7.jpg"
+    },
+    "weapon": {
+      "lvl": 3,
+      "item_class": "warrior",
+      "img": "/assets/img/sword/sword2.jpg"
+    },
+    "legs": {
+      "lvl": 2,
+      "item_class": "mag",
+      "img": "/assets/img/legs/legs.jpg"
+    },
+    "hands": {
+      "lvl": 4,
+      "item_class": "mag",
+      "img": "/assets/img/glove/glove2.jpg"
+    },
+    "boots": {
+      "lvl": 3,
+      "item_class": "mag",
+      "img": "/assets/img/boots/boots3.jpg"
+    }
+  }
+]}

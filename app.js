@@ -1,12 +1,13 @@
 const express = require('express')
 const config = require('config')
 const mongoose = require('mongoose')
+const CORS = require('cors')
 
 const app = express()
 
-app.use('/api', require('./routes/routes'))
+app.use('/api', CORS(), require('./routes/routes'))
 
-const PORT = config.get('port') || 5000
+const PORT = config.get('port') || 5001
 
 async function start() {
   try {

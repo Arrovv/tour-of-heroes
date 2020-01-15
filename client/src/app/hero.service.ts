@@ -10,7 +10,7 @@ import {MessageService} from './message.service';
 @Injectable({providedIn: 'root'})
 export class HeroService {
 
-  private heroesUrl = 'http://localhost:5001/api/';
+  private heroesUrl = 'http://localhost:5000/api';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -22,7 +22,7 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
+    return this.http.get<Hero[]>(`${this.heroesUrl}/`)
       .pipe(
         tap(_ => this.log('fetched heroes')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
