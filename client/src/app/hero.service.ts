@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable, of} from 'rxjs';
-import {catchError, map, tap} from "rxjs/operators";
+import {catchError, map, tap} from 'rxjs/operators';
 
 import {Hero} from './hero';
 import {MessageService} from './message.service';
@@ -10,11 +10,11 @@ import {MessageService} from './message.service';
 @Injectable({providedIn: 'root'})
 export class HeroService {
 
-  private heroesUrl = 'http://localhost:5000/api';
+  private heroesUrl = 'http://localhost:5000/api/heroes';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
-  }
+  };
 
   constructor(
     private http: HttpClient,
@@ -26,7 +26,7 @@ export class HeroService {
       .pipe(
         tap(_ => this.log('fetched heroes')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
-      )
+      );
   }
 
   getHeroNo404<Data>(id: number): Observable<Hero> {
@@ -35,7 +35,7 @@ export class HeroService {
       .pipe(
         map(heroes => heroes[0]),
         tap(h => {
-          const outcome = h ? `fetched` : `did not find`
+          const outcome = h ? `fetched` : `did not find`;
           this.log(`${outcome} hero id=${id}`);
         }),
         catchError(this.handleError<Hero>(`getHero id=${id}`))

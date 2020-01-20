@@ -1,20 +1,18 @@
-const express = require('express')
-const config = require('config')
-const mongoose = require('mongoose')
-const CORS = require('cors')
+const express = require('express');
+const config = require('config');
+const mongoose = require('mongoose');
+const CORS = require('cors');
+const PORT = config.get('port');
+const app = express();
 
-const app = express()
-
-app.use('/api', CORS(), require('./routes/routes'))
-
-const PORT = config.get('port') || 5001
+app.use('/api/heroes', CORS(), require('./routes/routes'))
 
 async function start() {
   try {
     await mongoose.connect(config.get('mongoUri'), {
-      useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true
+      useCreateIndex: true,
+      useNewUrlParser: true
     })
     app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`))
   } catch (e) {

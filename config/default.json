@@ -1,4 +1,4 @@
 {
   "port": 5000,
-  "mongoUri": "mongodb+srv://dbUser:qweasdzxc123@cluster0-bhzzl.gcp.mongodb.net/TourOfHero?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://dbUser:qweasdzxc123@cluster0-xd2mr.mongodb.net/TourOfHeroes?retryWrites=true&w=majority"
 }
